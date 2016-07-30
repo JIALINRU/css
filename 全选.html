@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<input type="checkbox">数学</input>
+	<input type="checkbox">语文</input>
+	<input type="checkbox">外语</input>
+	<input type="checkbox">历史</input>
+	</br>
+	</br>
+	</br>
+	<button id="checkAll">全选</button>	
+	<button id="checkNo">全不选</button>
+	<button id="checkOther">反选</button>
+	<script src="jquery-1.12.4.min.js"></script>
+	<script>
+		$(function(){
+			$('#checkAll').on('click', function(){
+				$('input').prop('checked','checked');
+			});
+			$('#checkNo').on('click', function(){
+				$('input').prop('checked',false);
+			});
+			$('#checkOther').on('click', function(){
+				$('input').each(function(){
+					// if(this.checked){
+					// 	this.checked = false;
+					// }else{
+					// 	this.checked = 'checked';
+					// }
+					this.checked = !this.checked;
+				})
+			});
+		});
+	</script>
+</body>
+</html>
